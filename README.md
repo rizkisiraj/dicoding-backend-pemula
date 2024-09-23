@@ -2,7 +2,7 @@
 
 Welcome to the **Dicoding Backend Pemula** project! This repository contains my attempt on the last project for the Dicoding Backend Pemula course.
 
-![Anime Image](https://i.pinimg.com/originals/15/3f/dc/153fdc30179a818011a624eda00c54bd.jpg) <!-- Replace this with the URL of the anime image you choose -->
+<img src="https://i.pinimg.com/originals/15/3f/dc/153fdc30179a818011a624eda00c54bd.jpg" alt="Anime Image" width="300"/>
 
 ## Overview
 
