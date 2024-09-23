@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "node server.js",
+    "start-dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^21.3.10"
+  }
+}
