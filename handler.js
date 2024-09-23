@@ -49,17 +49,35 @@ const addBookHandler = (request, h) => {
     }
 }
 
-const showBookHandler = (_, h) => {
+const showBookHandler = (request, h) => {
+    let booksToSend = books;
+
+    const { name, reading, finished } = request.query
+
+    if(name) {
+      booksToSend = booksToSend.filter(b => b.name.toLowerCase().includes(name))
+    }
+
+    if((reading !== null || reading !== undefined) && booksToSend.length > 0) {
+      if(reading == 1) {
+        booksToSend = booksToSend.filter(b.reading === true);
+      } else if(reading == 0) {
+        booksToSend = booksToSend.filter(b.reading === false);
+      }
+    }
+
+    if((finished !== null || finished !== undefined) && booksToSend.length > 0) {
+      if(finished === 1) {
+        booksToSend = booksToSend.filter(b.finished === true);
+      } else if(finished === 0) {
+        booksToSend = booksToSend.filter(b.finished === false);
+      }
+    }
+
     const response = h.response({
         status: 'success',
         data: {
-          books: books.map(book => {
-            return {
-              id: book.id,
-              name: book.name,
-              publisher: book.publisher
-            }
-          })
+          books: booksToSend
         },
       });
       response.code(200);
